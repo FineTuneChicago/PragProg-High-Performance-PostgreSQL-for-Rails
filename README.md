@@ -4,6 +4,18 @@
 Rideshare is the Rails application supporting the book "High Performance PostgreSQL for Rails" <http://pragprog.com/titles/aapsql>, published by Pragmatic Programmers in 2024.
 
 # Installation
+
+## Dev Container Installation
+You must have Docker Desktop installed.
+
+1. Open the project directory in Visual Studio Code.
+1. [Install Dev Containers extension Name: Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+1. In the Command Prompt select "Reopen in Container"
+![](image1.png)
+1. Wait for image to be downloaded and container to be built, you will know it's done when VSCode loads all files and you can browse them.
+
+
+## Standard Installation
 Prepare your development machine.
 
 <details>
@@ -58,7 +70,7 @@ Run `cat .ruby-version` from the Rideshare directory to find the needed version 
 For example, if `3.2.5` is listed, run:
 
 ```sh
-rbenv install 3.2.5
+rbenv install 3.2.5 # Skip if running dev container
 ```
 
 Run `rbenv versions` to confirm the correct version is active. The current version has an asterisk.
