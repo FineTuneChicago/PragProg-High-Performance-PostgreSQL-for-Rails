@@ -16,7 +16,7 @@ default: &default
 
 test:
   <<: *default
-  url: postgresql://postgres:@localhost/rideshare_test
+  url: postgresql://postgres:@db/rideshare_test
 
 development:
   <<: *default

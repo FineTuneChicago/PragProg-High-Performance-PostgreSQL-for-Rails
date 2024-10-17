@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/andyatkinson/rideshare.svg?style=svg)](https://circleci.com/gh/andyatkinson/rideshare)
 
 # 📚 High Performance PostgreSQL for Rails
-Rideshare is the Rails application supporting the book "High Performance PostgreSQL for Rails" <http://pragprog.com/titles/aapsql>, published by Pragmatic Programmers in 2024. 
+Rideshare is the Rails application supporting the book "High Performance PostgreSQL for Rails" <http://pragprog.com/titles/aapsql>, published by Pragmatic Programmers in 2024.
 
 # Installation
 Prepare your development machine.
@@ -16,18 +16,23 @@ Prepare your development machine.
 </details>
 
 ## Homebrew Packages
-First, install [Homebrew](https://brew.sh).
+First, install [Homebrew](https://brew.sh). **Not needed if you are running the Dev Container.**
 
 ### Graphviz
 ```sh
 brew install graphviz
 ```
 
+or in the dev container
+```sh
+sudo apt install graphviz
+```
+
 ## Ruby Version Manager
 Before installing Ruby, install a *Ruby version manager*. The recommended one is [Rbenv](https://github.com/rbenv/rbenv). Run:
 
 ```sh
-brew install rbenv
+brew install rbenv # Already installed in the Dev Container and Ruby Version is installed
 ```
 
 ## PostgreSQL
@@ -36,21 +41,31 @@ PostgreSQL 16 or greater is required. Installation may be via Homebrew, although
 ### PostgresApp
 - Once installed, from the Menu Bar app, choose "Open Postgres" then click the "+" icon to create a new PostgreSQL 16 server
 
+### PostgreSQL in Dev Container
+
+```sh
+sudo apt update
+sudo apt install gnupg2 wget nano
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+sudo apt update
+sudo apt install postgresql-16 postgresql-contrib-16
+```
 
 ## Ruby
 Run `cat .ruby-version` from the Rideshare directory to find the needed version of Ruby.
 
-For example, if `3.2.2` is listed, run:
+For example, if `3.2.5` is listed, run:
 
 ```sh
-rbenv install 3.2.2
+rbenv install 3.2.5
 ```
 
 Run `rbenv versions` to confirm the correct version is active. The current version has an asterisk.
 
 ```sh
   system
-* 3.2.2 (set by /Users/andy/Projects/rideshare/.ruby-version)
+* 3.2.5 (set by /Users/andy/Projects/rideshare/.ruby-version)
 ```
 
 Running into rbenv trouble? Review *Learn how to load rbenv in your shell* using [`rbenv init`](https://github.com/rbenv/rbenv).

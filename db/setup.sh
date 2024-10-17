@@ -65,11 +65,11 @@ psql $DB_URL -a -f db/alter_default_privileges_public.sql
 
 # Add generated password to ~/.pgpass file
 echo "Add to ~/.pgpass"
-echo "localhost:5432:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
-localhost:6432:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
-localhost:5432:rideshare_development:app:$RIDESHARE_DB_PASSWORD
-localhost:54321:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
-localhost:54322:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
+echo "db:5432:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
+db:6432:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
+db:5432:rideshare_development:app:$RIDESHARE_DB_PASSWORD
+db:54321:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
+db:54322:rideshare_development:owner:$RIDESHARE_DB_PASSWORD
 *:*:*:replication_user:$RIDESHARE_DB_PASSWORD
 *:*:*:app_readonly:$RIDESHARE_DB_PASSWORD" >> ~/.pgpass
 
