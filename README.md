@@ -127,6 +127,8 @@ Let's capture the output of the script. Use the command below to do that. The sc
 sh db/setup.sh 2>&1 | tee -a output.log
 ```
 
+> If you are using the Dev Container and are asked for a password while running the script, it is 'postgres'
+
 Since you set `RIDESHARE_DB_PASSWORD` earlier, create or update the special `~/.pgpass` file with the password you generated.
 This allows us to put the PostgreSQL user in the connection string, without needing to also supply the password.
 
