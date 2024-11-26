@@ -61,7 +61,7 @@ sudo apt install gnupg2 wget nano
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
 sudo apt update
-sudo apt install postgresql-16 postgresql-contrib-16 # You might need to install 17 if Postgres 17 image was pulled down
+sudo apt install postgresql-17 postgresql-contrib-17
 ```
 
 ## Ruby
@@ -98,6 +98,8 @@ bundle install
 
 The script is called [`db/setup.sh`](db/setup.sh). Don't run it yet. The video below shows common issues for this section.
 
+> Skip this video if you're using the Dev Container
+
 <details>
 <summary>🎥 Rideshare DB setup. Common issues running db/setup.sh</summary>
 <a href="https://www.loom.com/share/fc919520089c4e0abb2c0a02b68bbd91">
@@ -107,6 +109,8 @@ The script is called [`db/setup.sh`](db/setup.sh). Don't run it yet. The video b
 </details>
 
 Before you run it, let's set some environment variables. Open the file `db/setup.sh` and read the comments at the top for more info about these env vars:
+
+> If you are using the Dev Container, open the `.env` file and use the values defined there for more straightforward setup
 
 - `RIDESHARE_DB_PASSWORD`
 - `DB_URL`
